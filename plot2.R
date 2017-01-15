@@ -1,4 +1,5 @@
 library(dplyr)
+Sys.setenv(LANG = "en_US.UTF-8")
 
 data <- read.csv("household_power_consumption.txt",
                  header = T,

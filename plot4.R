@@ -1,4 +1,5 @@
 library(dplyr)
+Sys.setenv(LANG = "en_US.UTF-8")
 
 # Load the data
 
@@ -71,11 +72,10 @@ lines(data.relevant$DateTime,
 # Use english abbreviations for days as ticks on the x axis
 axis(1, at = xTicks, labels = xTicksLab)
 
-par(mar = c(4,4,4,4))
 legend("topright",
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
        col    = c("black", "red", "blue"),
-       lty    = c(1,1,1),
+       lty    = 1,
        bty    = "n")
 
 ## Plot 4 (bottom right)
