@@ -18,7 +18,15 @@ plot(data.relevant$DateTime,
      data.relevant$Global_active_power,
      type = "l",
      xlab = "",
+     xaxt = "n",
      ylab = "Global Active Power (kilowatts)")
+
+# Use english abbreviations for days as ticks on the x axis
+axis(1,
+     at = c(as.POSIXct("2007-02-01", tz = "GMT"),
+            as.POSIXct("2007-02-02", tz = "GMT"),
+            as.POSIXct("2007-02-03", tz = "GMT")),
+     labels = c("Thu", "Fri", "Sat"))
 
 dev.copy(png, "plot2.png")
 dev.off()

@@ -18,6 +18,7 @@ plot(data.relevant$DateTime,
      data.relevant$Sub_metering_1,
      type = "l",
      xlab = "",
+     xaxt = "n",
      ylab = "Energy sub metering")
 lines(data.relevant$DateTime,
       data.relevant$Sub_metering_2,
@@ -25,6 +26,13 @@ lines(data.relevant$DateTime,
 lines(data.relevant$DateTime,
       data.relevant$Sub_metering_3,
       col = "blue")
+
+# Use english abbreviations for days as ticks on the x axis
+axis(1,
+     at = c(as.POSIXct("2007-02-01", tz = "GMT"),
+            as.POSIXct("2007-02-02", tz = "GMT"),
+            as.POSIXct("2007-02-03", tz = "GMT")),
+     labels = c("Thu", "Fri", "Sat"))
 
 par(mar = c(4,4,4,4))
 legend("topright",
